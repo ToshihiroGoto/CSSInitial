@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS - initial, unset</title>
+</head>
+<body>
+	<style>
+		body     { font-family: sans-serif; font-weight: bold; }
+
+		.base    { color: red; }
+		.initial { color: initial; }
+
+		.color1 { color: #F0A; border: 1px solid #A0A0A0; }
+		.color1 p { padding: 0 10px; }
+		.color2 { color: #0AF; margin: 10px; border: inherit; padding: inherit; }
+		.color3 { color: #FA0; margin: 10px; border: inherit; padding: inherit; text-decoration: underline;}
+		.unset  { color: unset; }
+	</style>
+
+	<h1>CSS: initial</h1>
+	<div class="base">
+		<p>color: red;</p>
+		<p class="initial">color: initial;</p>
+	</div>
+	<br>
+
+	<h1>CSS: unset</h1>
+	<div class="color1">
+		<p>[.color1] color: #F0A; </p>
+		
+		<div class="color2">
+			<p>[.color2] color: #0AF;</p>
+
+			<div class="color3">
+				<p>[.color3] color: #FA0;</p>
+			</div>
+
+			<div class="color3 unset">
+				<p>
+					[.color3 .unset] color: unset;<br>
+					本来は #FA0 になるが unset され上の #0AF が適応される
+				</p>
+			</div>
+
+		</div>
+
+	</div>
+</body>
+</html>
